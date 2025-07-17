@@ -1,0 +1,19 @@
+{
+    "name": "Springboot Dev Container",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "spring",
+    "forwardPorts": [8080],
+    "workspaceFolder": "/workspace",
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "terminal.integrated.shell.linux": "/bin/zsh"
+            },
+            "extensions": [
+                "vmware.vscode-boot-dev-pack",
+                "vscjava.vscode-java-pack",
+                "eamodio.gitlens"
+            ]
+        }
+    }
+}

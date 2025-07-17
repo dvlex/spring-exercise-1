@@ -1,0 +1,27 @@
+services:
+  spring:
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+    volumes:
+      - ..:/workspace:cached
+    command: "/bin/sh -c 'while :; do sleep 10; done'"
+    ports:
+      - "8080:8080"
+    extra_hosts:
+      - "lanspring:0.0.0.0"
+
+  postgresql:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: alex
+      POSTGRES_PASSWORD: 1234
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    extra_hosts:
+      - "lanpsql:0.0.0.0"
+
+volumes:
+  postgres_data:
