@@ -8,7 +8,8 @@ RUN apt update -y && \
     curl \
     zsh \
     rpm \
-    make
+    make \
+    maven
 
 # Descargar e instalar Oracle JDK
 RUN apt install -y openjdk-21-jdk
